@@ -10,7 +10,7 @@ const foods = [
     description: "Juicy steak with a side of roasted vegetables",
     price: "$25",
     category: "Main dishes",
-    image: "/public/images/steak.png"
+    image: "/images/steak.png"
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const foods = [
     description: "Fresh sushi rolls with a variety of fillings",
     price: "$30",
     category: "Main dishes",
-    image: "/public/images/soshy.jpg"
+    image: "/images/soshy.jpg"
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const foods = [
     description: "Spicy tacos with grilled chicken, avocado, and salsa",
     price: "$35",
     category: "Main dishes",
-    image: "/public/images/hero food.jpg"
+    image: "/images/hero food.jpg"
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const foods = [
     description: "Juicy beef patty with lettuce, tomato, and special sauce",
     price: "$10",
     category: "Main dishes",
-    image: "/public/images/burger.jfif"
+    image: "/images/burger.jfif"
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const foods = [
     description: "Pan-seared shrimp with garlic, herbs, and lemon",
     price: "$23",
     category: "Main dishes",
-    image: "/public/images/fish1.jpg"
+    image: "/images/fish1.jpg"
   }
 ];
 
