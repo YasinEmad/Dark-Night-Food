@@ -80,7 +80,7 @@ const BatmanHeroSection = () => {
               {/* Batman image */}
               <div className="relative">
                 <motion.img
-                  src="/public/images/light batman.png"
+                  src="/images/light batman.png"
                   alt="Batman"
                   className="w-full h-96 object-cover object-center rounded-xl shadow-2xl"
                   whileHover={{ scale: 1.02 }}
