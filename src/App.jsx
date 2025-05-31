@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainHeader from './Componentes/MainHeader';
 import Home from './Pages/Home';
 import AboutPage from './Pages/About';
-import BatmanMenu from './Pages/menu';
+import BatmanMenu from './Pages/Menu';
 import Footer from './Componentes/Footer';
 import CartPage from './Pages/Cart'; // Importing CartPage component
 // Import other page components like MenuPage, LoginPage as you create them
