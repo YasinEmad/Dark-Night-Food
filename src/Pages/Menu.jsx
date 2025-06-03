@@ -8,7 +8,7 @@ import MenuGrid from '../Componentes/MenuGrid';
 import MenuFooter from '../Componentes/MenuFooter';
 import MenuHeader from '../Componentes/MenuHeader';
 import { doc, getDoc } from 'firebase/firestore';
-import db from '../Firebase/firebase';
+import { db } from '../Firebase/firebase';
 import { animationVariants } from '../config/batmanMenu.config';
 
 // Helper to map icon names to actual components

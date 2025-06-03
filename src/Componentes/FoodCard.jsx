@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { collection, addDoc } from 'firebase/firestore';
 import { Plus, Check } from 'lucide-react';
-import db from '../Firebase/firebase';
+import { db } from '../Firebase/firebase';
 
 const FoodCard = ({ title, description, price, image, rating, chef, variants }) => {
   const [isAdding, setIsAdding] = useState(false);

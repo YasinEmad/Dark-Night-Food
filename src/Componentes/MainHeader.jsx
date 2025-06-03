@@ -1,12 +1,26 @@
 import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, User } from "lucide-react";
-import { Link, NavLink } from "react-router-dom";
+import { Menu, X, User, LogOut } from "lucide-react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import CartIcon from './CartIcon';
+import { useAuth } from '../hooks/useAuth';
+import { signOut } from 'firebase/auth';
+import { auth } from '../Firebase/firebase';
 
 export default function MainHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate('/');
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
 
   const menuVariants = {
     hidden: {
@@ -83,22 +97,33 @@ export default function MainHeader() {
                 </motion.div>
               </NavLink>
             ))}
-          </nav>          {/* Right: Cart and Login Buttons */}
-          <div className="hidden md:flex items-center space-x-4 ml-6">
+          </nav>          {/* Right: Cart and Login Buttons */}          <div className="hidden md:flex items-center space-x-4 ml-6">
             <CartIcon />
-            <Link to="/login">
+            {user ? (
               <motion.button
+                onClick={handleLogout}
                 className="text-blue-900 px-4 py-2 rounded-md flex items-center space-x-2 font-semibold"
                 whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px rgb(59,130,246)" }}
                 whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.2 + menuItems.length * 0.1 }}
               >
-                <User size={18} />
-                <span>Login</span>
+                <LogOut size={18} />
+                <span>Logout</span>
               </motion.button>
-            </Link>
+            ) : (
+              <Link to="/login">
+                <motion.button
+                  className="text-blue-900 px-4 py-2 rounded-md flex items-center space-x-2 font-semibold"
+                  whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px rgb(59,130,246)" }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.2 + menuItems.length * 0.1 }}
+                >
+                  <User size={18} />
+                  <span>Login</span>
+                </motion.button>
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}

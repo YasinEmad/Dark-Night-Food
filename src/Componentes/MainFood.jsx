@@ -52,15 +52,13 @@ export default function FoodShowcase() {
   const [direction, setDirection] = useState(0);
   
   // Auto-rotate foods every 4 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
+  useEffect(() => {    const interval = setInterval(() => {
       nextFood();
     }, 4000);
     
     return () => clearInterval(interval);
   }, [currentIndex]);
-  
-  const nextFood = () => {
+    const nextFood = () => {
     setDirection(1);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % foods.length);
   };
@@ -117,8 +115,7 @@ export default function FoodShowcase() {
                   transition={{ delay: 0.2 }}
                   whileHover={{ scale: 1.02 }}
                 >
-                  <div className="relative overflow-hidden rounded-lg shadow-2xl">
-                    <img 
+                  <div className="relative overflow-hidden rounded-lg shadow-2xl">                    <img 
                       src={foods[currentIndex].image} 
                       alt={foods[currentIndex].name} 
                       className="w-full h-64 md:h-80 object-cover transform transition-transform duration-700 group-hover:scale-110"
@@ -166,9 +163,7 @@ export default function FoodShowcase() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
-        </div>
-        
-        <div className="flex justify-center mt-8 gap-3">
+        </div>          <div className="flex justify-center mt-8 gap-3">
           {foods.map((_, index) => (
             <button
               key={index}

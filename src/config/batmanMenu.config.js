@@ -1,4 +1,3 @@
-
 export const animationVariants = {
   container: {
     hidden: { opacity: 0, y: 20 },
@@ -121,3 +120,5 @@ export const values = [
       "We're more than a restaurant - we're a gathering place for Gotham's finest, where legends are born over exceptional meals.",
   },
 ];
+
+

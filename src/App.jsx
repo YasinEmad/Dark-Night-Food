@@ -4,8 +4,10 @@ import Home from './Pages/Home';
 import AboutPage from './Pages/About';
 import BatmanMenu from './Pages/Menu';
 import Footer from './Componentes/Footer';
-import CartPage from './Pages/Cart'; // Importing CartPage component
-// Import other page components like MenuPage, LoginPage as you create them
+import CartPage from './Pages/Cart';
+import Login from './Pages/Login';
+import { AuthProvider } from './context/AuthContext.jsx';
+// Import other page components as needed
 
 // A simple layout component to include the header on all pages
 const Layout = ({ children }) => {
@@ -24,18 +26,18 @@ const Layout = ({ children }) => {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout><Home /></Layout>} />
-        <Route path="/about" element={<Layout><AboutPage /></Layout>} />
-        <Route path="/menu" element={<Layout><BatmanMenu /></Layout>} />
-        <Route path="/cart" element={<Layout><CartPage /></Layout>} /> {/* Cart route added */}
-        {/* <Route path="/login" element={<Layout><LoginPage /></Layout>} /> */}
-       
-        {/* Add a 404 Not Found route if desired */}
-        <Route path="*" element={<Layout><div><h1>404 - Page Not Found</h1></div></Layout>} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout><Home /></Layout>} />
+          <Route path="/about" element={<Layout><AboutPage /></Layout>} />
+          <Route path="/menu" element={<Layout><BatmanMenu /></Layout>} />
+          <Route path="/cart" element={<Layout><CartPage /></Layout>} />
+          <Route path="/login" element={<Layout><Login /></Layout>} />
+          <Route path="*" element={<Layout><div><h1>404 - Page Not Found</h1></div></Layout>} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

@@ -10,7 +10,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { ShoppingCart } from "lucide-react";
-import db from "../Firebase/firebase";
+import { db } from "../Firebase/firebase";
 
 // Import Components
 import BatAlert from "../Componentes/Cart/BatAlert";

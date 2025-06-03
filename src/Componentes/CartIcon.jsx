@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ShoppingCart } from 'lucide-react';
 import { collection, query, onSnapshot } from 'firebase/firestore';
-import db from '../Firebase/firebase';
+import { db } from '../Firebase/firebase';
 
 export default function CartIcon() {
   const [itemCount, setItemCount] = useState(0);
