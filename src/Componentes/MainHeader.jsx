@@ -63,7 +63,7 @@ export default function MainHeader() {
           {/* Left: Logo */}
           <Link to="/">
             <motion.div
-  className="flex items-center space-x-2 cursor-pointer -ml-20"
+  className="flex items-center space-x-2 cursor-pointer -ml-10"
   initial={{ opacity: 0, x: -20 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.5 }}
