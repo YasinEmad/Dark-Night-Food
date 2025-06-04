@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { auth } from '../Firebase/firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 const Login = () => {
